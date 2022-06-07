@@ -1,0 +1,171 @@
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css");
+
+* {
+  font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto,
+    "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR",
+    "Malgun Gothic", sans-serif;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background: no-repeat
+    radial-gradient(96.74% 276.79% at 3.59% 5.28%, #f0f4ff 0%, #a5b6ee 100%);
+}
+
+#app {
+  margin-top: 72px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logo-title {
+  width: 244px;
+  height: 48px;
+  background-image: url("./img/weniv-logo.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.timer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 400px;
+  height: 360px;
+  left: 440px;
+  top: 180px;
+  margin-top: 60px;
+  /* gradient */
+
+  background: linear-gradient(144.07deg, #5572bb 2.13%, #374b7c 102.97%);
+  /* shadow */
+
+  box-shadow: 20px 20px 60px 10px rgba(55, 75, 124, 0.4);
+  border-radius: 16px;
+}
+
+address {
+  margin-top: 60px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  /* identical to box height */
+
+  text-align: center;
+  text-transform: uppercase;
+
+  color: #8596bf;
+}
+.timer-title {
+  margin-top: 48px;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 29px;
+  /* identical to box height */
+
+  text-align: center;
+  text-transform: uppercase;
+
+  color: #ffffff;
+}
+
+.line {
+  margin-top: 24px;
+  width: 312px;
+  height: 2px;
+  left: 484px;
+  top: 280px;
+  background: #5b75b4;
+  border: none;
+}
+
+.line::after {
+  content: "";
+  display: block;
+  width: 312px;
+  height: 1px;
+  background: #3d538a;
+  border: none;
+}
+.cont-hms {
+  display: flex;
+  gap: 22px;
+  margin-top: 50px;
+}
+
+.cont-hms div {
+  text-align: center;
+  line-height: 80px;
+  font-weight: 700;
+  font-size: 40px;
+  /* identical to box height */
+
+  text-align: center;
+
+  color: #ffffff;
+  width: 80px;
+  height: 80px;
+  background-image: url("./img/box.png");
+}
+
+.cont-hms .hrs {
+  position: relative;
+}
+
+.cont-hms .hrs::before {
+  content: "HRS";
+}
+
+.cont-hms .min {
+  position: relative;
+}
+.cont-hms .min::before {
+  content: "MIN";
+}
+
+.cont-hms .sec {
+  position: relative;
+}
+.cont-hms .sec::before {
+  content: "SEC";
+}
+
+.cont-hms div::before {
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 14px;
+  text-align: center;
+  text-transform: uppercase;
+
+  /* light */
+
+  color: #a5b6ee;
+  position: absolute;
+  top: -9px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.hrs::after,
+.min::after {
+  content: "";
+  display: block;
+  background-image: url("./img/icon/icon-dot.png");
+  width: 6px;
+  height: 26px;
+  background-position: center;
+  background-size: cover;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  right: -17.5px;
+}
+.cont-btn {
+  margin-top: 40px;
+}
+
+.start-btn {
+  margin-right: 12px;
+}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./reset.css" />
+    <link rel="stylesheet" href="./style.css" />
+    <title></title>
+  </head>
+  <body>
+    <div id="app">
+      <h1 class="logo-title"></h1>
+      <div class="timer">
+        <h2 class="timer-title">timer</h2>
+        <div class="line"></div>
+        <div class="cont-hms">
+          <div class="hrs">00</div>
+          <div class="min">00</div>
+          <div class="sec">00</div>
+        </div>
+        <div class="cont-btn">
+          <img class="start-btn" src="./img/button/start-disabled.png" alt="" />
+          <img class="reset-btn" src="./img/button/reset-disabled.png" alt="" />
+        </div>
+      </div>
+      <address>ⓒ WENIV Corp.</address>
+    </div>
+    <script>
+      const startBtn = document.querySelector(".start-btn");
+      const resetBtn = document.querySelector(".reset-btn");
+      const sec = document.querySelector(".sec");
+
+      sec.addEventListener("click", () => {
+        sec.textContent = (Number(sec.textContent) + 10) % 60;
+        startBtn.src = "./img/button/start-default.png";
+        resetBtn.src = "./img/button/reset-default.png";
+      });
+
+      startBtn.addEventListener("click", () => {
+        if (startBtn.src.indexOf("default") !== -1) {
+          startBtn.src = "./img/button/pause.png";
+        } else if (startBtn.src.indexOf("pause") !== -1) {
+          startBtn.src = "./img/button/start-default.png";
+        }
+      });
+
+      resetBtn.addEventListener("click", () => {
+        sec.textContent = "00";
+        startBtn.src = "./img/button/start-disabled.png";
+        resetBtn.src = "./img/button/reset-disabled.png";
+      });
+
+      function startCountDown() {}
+    </script>
+  </body>
+</html>
